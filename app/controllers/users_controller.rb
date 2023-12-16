@@ -1,4 +1,15 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user,{only: [:index, :show, :edit, :update]}
+  before_action :forbid_login_user,{only: [:new, :create, :login, :login_form]}
+  before_action :ensure_correct_user,{only: [:edit, :update]}
+
+  def ensure_correct_user
+    if params[:id].to_i != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/posts/index")
+    end
+  end
+
   def index
     @users = User.all
   end
