@@ -13,19 +13,24 @@
   <body>
     <header>
       <div class="header-logo">
-        <%= link_to("TweetApp","/")%>
+        <%= link_to("TweetApp", "/") %>
       </div>
       <ul class="header-menus">
-        <%= link_to("TweetAppとは","/about")%>
-      </ul>
-      <ul class="header-menus">
-        <%= link_to("投稿一覧","/posts/index")%>
-      </ul>
-      <ul class="header-menus">
-        <%= link_to("新規投稿","/posts/new")%>
-      </ul>
-      <ul class="header-menus">
-        <%= link_to("ユーザー一覧", "/users/index") %>
+        <li>
+          <%= link_to("TweetAppとは", "/about") %>
+        </li>
+        <li>
+          <%= link_to("投稿一覧", "/posts/index") %>
+        </li>
+        <li>
+          <%= link_to("新規投稿", "/posts/new") %>
+        </li>
+        <li>
+          <%= link_to("ユーザー一覧", "/users/index") %>
+        </li>
+        <li>
+          <%= link_to("新規登録", "/signup") %>
+        </li>
       </ul>
     </header>
     <% if flash[:notice] %>
