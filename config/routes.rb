@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "users/:id/edit", to:"users#edit"
   post "users/create"
   post "users/:id/update", to:"users#update"
+  get "login", to:"users#login_form"
+  post "login", to:"users#login"
+  post "logout", to:"users#logout"
 
   get 'posts/index'
   get "posts/new"
