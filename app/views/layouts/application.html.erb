@@ -24,6 +24,9 @@
       <ul class="header-menus">
         <%= link_to("新規投稿","/posts/new")%>
       </ul>
+      <ul class="header-menus">
+        <%= link_to("ユーザー一覧", "/users/index") %>
+      </ul>
     </header>
     <% if flash[:notice] %>
       <div class="flash">
