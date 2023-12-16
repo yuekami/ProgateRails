@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "signup", to:"users#new"
   get "users/:id/edit", to:"users#edit"
   post "users/create"
+  post "users/:id/update", to:"users#update"
 
   get 'posts/index'
   get "posts/new"
