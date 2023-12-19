@@ -64,13 +64,14 @@ class UsersController < ApplicationController
 
   end
 
+  ### パスワードハッシュ化に対応
   def login
     @user = User.find_by(
-      email: params[:email],
-      password: params[:password]
+      email: params[:email]
+      # password: params[:password]
       )
 
-    if @user
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
       redirect_to("/posts/index")
